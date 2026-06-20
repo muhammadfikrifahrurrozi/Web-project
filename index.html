@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Undangan Pernikahan – Revi.h &amp; Siti.nh</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel+Decorative:wght@400;700&family=Lato:wght@300;400&display=swap"
+    rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<div id="lightbox" onclick="closeLightbox()">
+  <button class="lb-close" onclick="closeLightbox()">✕</button>
+  <img id="lb-img" src="" alt="" />
+  <p id="lb-caption"></p>
+</div>
+
+<body>
+
+  <!-- =====================================================
+       ENVELOPE / LANDING SCREEN
+       ===================================================== -->
+  <div id="envelope-screen">
+
+    <div class="env-ornament">❧ Undangan Pernikahan ❧</div>
+
+    <div class="envelope-wrap" onclick="openInvitation()">
+      <svg class="envelope-svg" viewBox="0 0 340 230" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Badan amplop -->
+        <rect x="1" y="1" width="338" height="228" rx="4" fill="#2a1c08" stroke="#c9a84c" stroke-width="1.5" />
+        <!-- Lipatan bawah -->
+        <path d="M1 229 L170 130 L339 229" fill="#1f1507" stroke="#c9a84c" stroke-width="1" />
+        <!-- Segitiga samping -->
+        <path d="M1 1 L1 229 L140 130Z" fill="#251809" />
+        <path d="M339 1 L339 229 L200 130Z" fill="#251809" />
+        <!-- Tutup amplop -->
+        <path d="M1 1 L170 110 L339 1Z" fill="#2f1f08" stroke="#c9a84c" stroke-width="1" />
+        <!-- Ornamen emas atas -->
+        <path d="M140 30 Q170 20 200 30" stroke="#c9a84c" stroke-width="0.8" fill="none" opacity="0.6" />
+        <path d="M120 38 Q170 15 220 38" stroke="#c9a84c" stroke-width="0.6" fill="none" opacity="0.4" />
+        <!-- Sudut ornamen -->
+        <circle cx="20" cy="20" r="3" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.4" />
+        <circle cx="320" cy="20" r="3" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.4" />
+        <circle cx="20" cy="210" r="3" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.4" />
+        <circle cx="320" cy="210" r="3" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.4" />
+      </svg>
+      <div class="wax-seal">R&amp;S</div>
+    </div>
+
+    <div class="env-names">REVI.H &amp; SITI.NH</div>
+    <div class="env-tagline">Klik segel untuk membuka undangan</div>
+    <button class="open-btn" onclick="openInvitation()">Buka Undangan</button>
+
+  </div><!-- /#envelope-screen -->
+
+
+  <!-- =====================================================
+       TOMBOL MUSIK
+       ===================================================== -->
+  <button id="music-btn" onclick="toggleMusic()" title="Toggle Musik">♪</button>
+
+
+  <!-- =====================================================
+       NAVIGASI TITIK (Scroll Nav)
+       ===================================================== -->
+  <nav class="scroll-nav" id="scroll-nav" style="display:none">
+    <div class="nav-dot" data-target="hero" title="Beranda"></div>
+    <div class="nav-dot" data-target="couple" title="Mempelai"></div>
+    <div class="nav-dot" data-target="event" title="Acara"></div>
+    <div class="nav-dot" data-target="countdown" title="Hitung Mundur"></div>
+    <div class="nav-dot" data-target="gallery" title="Galeri"></div>
+    <div class="nav-dot" data-target="location" title="Lokasi"></div>
+    <div class="nav-dot" data-target="rsvp" title="RSVP"></div>
+    <div class="nav-dot" data-target="gift" title="Wedding Gift"></div>
+    <div class="nav-dot" data-target="closing" title="Penutup"></div>
+  </nav>
+
+
+  <!-- =====================================================
+       KONTEN UTAMA
+       ===================================================== -->
+  <div id="main-content">
+
+    <!-- ── HERO ─────────────────────────────────────── -->
+    <section id="hero">
+      <div class="hero-bg"></div>
+
+      <!-- Ornamen sudut -->
+      <svg class="hero-corner tl" viewBox="0 0 200 200" fill="none">
+        <path d="M10 10 L10 80 Q10 10 80 10Z" stroke="#c9a84c" stroke-width="1" fill="none" />
+        <path d="M10 10 L10 60 Q10 10 60 10Z" stroke="#c9a84c" stroke-width="0.6" fill="none" />
+        <path d="M10 10 L30 10 M10 10 L10 30" stroke="#c9a84c" stroke-width="1.5" />
+        <circle cx="10" cy="10" r="4" fill="#c9a84c" />
+      </svg>
+      <svg class="hero-corner tr" viewBox="0 0 200 200" fill="none">
+        <path d="M10 10 L10 80 Q10 10 80 10Z" stroke="#c9a84c" stroke-width="1" fill="none" />
+        <path d="M10 10 L10 60 Q10 10 60 10Z" stroke="#c9a84c" stroke-width="0.6" fill="none" />
+        <path d="M10 10 L30 10 M10 10 L10 30" stroke="#c9a84c" stroke-width="1.5" />
+        <circle cx="10" cy="10" r="4" fill="#c9a84c" />
+      </svg>
+      <svg class="hero-corner bl" viewBox="0 0 200 200" fill="none">
+        <path d="M10 10 L10 80 Q10 10 80 10Z" stroke="#c9a84c" stroke-width="1" fill="none" />
+        <path d="M10 10 L10 60 Q10 10 60 10Z" stroke="#c9a84c" stroke-width="0.6" fill="none" />
+        <path d="M10 10 L30 10 M10 10 L10 30" stroke="#c9a84c" stroke-width="1.5" />
+        <circle cx="10" cy="10" r="4" fill="#c9a84c" />
+      </svg>
+      <svg class="hero-corner br" viewBox="0 0 200 200" fill="none">
+        <path d="M10 10 L10 80 Q10 10 80 10Z" stroke="#c9a84c" stroke-width="1" fill="none" />
+        <path d="M10 10 L10 60 Q10 10 60 10Z" stroke="#c9a84c" stroke-width="0.6" fill="none" />
+        <path d="M10 10 L30 10 M10 10 L10 30" stroke="#c9a84c" stroke-width="1.5" />
+        <circle cx="10" cy="10" r="4" fill="#c9a84c" />
+      </svg>
+
+      <div class="hero-content">
+        <p class="hero-bismillah">Bismillahirrahmanirrahim, Assalamu'alaikum Wr. Wb.</p>
+        <div class="divider" style="margin:1.5rem auto"><span>✦</span></div>
+        <p class="label">Pernikahan</p>
+        <h1 class="hero-title">Revi.h</h1>
+        <span class="hero-amp">&amp;</span>
+        <h1 class="hero-title" style="margin-top:0.1rem">Siti.nh</h1>
+        <div class="divider" style="margin:1.5rem auto"><span>✦</span></div>
+        <p class="hero-date">Senin, 29 JUNI 2026</p>
+      </div>
+    </section>
+
+
+    <!-- ── COUPLE ────────────────────────────────────── -->
+    <section id="couple">
+      <p class="label" style="color:var(--gold-light);opacity:0.6;z-index:1">Yang Berbahagia</p>
+      <div class="divider" style="margin-bottom:3rem"><span style="color:var(--gold)">✦</span></div>
+
+      <div class="couple-grid">
+
+        <!-- Mempelai Pria -->
+        <div class="couple-card">
+          <div class="couple-avatar">
+            <div class="couple-avatar-inner">
+              <img src="Revi-h.jpeg" alt="Revi Hermawan">
+            </div>
+          </div>
+          <p class="couple-title">Mempelai Pria</p>
+          <h2 class="couple-name">Revi<br>Hermawan</h2>
+          <p class="couple-parents">
+            Putra pertama dari<br>
+            <strong>Bapak Ade suherman</strong><br>
+            &amp; <strong>Ibu Hesti haryanti</strong>
+          </p>
+        </div>
+
+        <!-- Pemisah -->
+        <div class="couple-sep">&amp;</div>
+
+        <!-- Mempelai Wanita -->
+        <div class="couple-card" style="transition-delay:0.2s">
+          <div class="couple-avatar">
+            <div class="couple-avatar-inner" style="background:none">
+              <img src="Siti-n-h.jpeg" alt="Siti Nurhayanti">
+            </div>
+          </div>
+          <p class="couple-title">Mempelai Wanita</p>
+          <h2 class="couple-name">Siti<br>Nurhayanti</h2>
+          <p class="couple-parents">
+            Putri ke enam dari<br>
+            <strong>Bapak Asep Muhidin</strong><br>
+            &amp; <strong>Ibu hj.Imas karimah</strong>
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ── EVENT ─────────────────────────────────────── -->
+    <section id="event">
+      <div class="event-bg"></div>
+      <h2 class="event-heading">Hari Istimewa Kami</h2>
+
+      <div class="event-cards">
+
+        <!-- Akad Nikah -->
+        <div class="event-card">
+          <div class="event-icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Lokasi" width="50">
+          </div>
+          <div class="event-date-badge">29 JUN 2026</div>
+          <h3 class="event-type">Akad Nikah</h3>
+          <div class="event-info">
+            <strong>08:00 – SelesaiWIB</strong>
+            Saung Kreatif<br>
+            Jln. Nyimas gedengwaru, RT/RW.01/03,<br>
+            dsn.cigembong, ds Cikondang, kec. Ganeas, SUMEDANG
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ── COUNTDOWN ─────────────────────────────────── -->
+    <section id="countdown">
+      <p class="label" style="z-index:1;color:var(--gold-light);opacity:0.6">Menghitung Hari</p>
+      <h2 class="countdown-heading">"Menuju Hari Bahagia Kami"</h2>
+
+      <div class="countdown-grid">
+        <div class="count-box fade-up">
+          <span class="count-num" id="cd-days">--</span>
+          <p class="count-label">Hari</p>
+        </div>
+        <div class="count-box fade-up" style="transition-delay:0.1s">
+          <span class="count-num" id="cd-hours">--</span>
+          <p class="count-label">Jam</p>
+        </div>
+        <div class="count-box fade-up" style="transition-delay:0.2s">
+          <span class="count-num" id="cd-mins">--</span>
+          <p class="count-label">Menit</p>
+        </div>
+        <div class="count-box cd-secs-box fade-up" style="transition-delay:0.3s">
+          <span class="count-num" id="cd-secs">--</span>
+          <p class="count-label">Detik</p>
+        </div>
+      </div>
+      <div class="cd-progress-wrap">
+        <div class="cd-progress-bar" id="cd-progress"></div>
+      </div>
+      <p class="cd-date-label">📅 &nbsp;Senin, 29 Juni 2026 · 08.00 WIB</p>
+      <a class="cd-cal-btn"
+        href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Revi+%26+Siti&dates=20260629T010000Z/20260629T060000Z&details=Akad+Nikah&location=Saung+Kreatif+Sumedang">
+        🗓 &nbsp;Simpan ke Kalender
+      </a>
+    </section>
+
+  <!-- Love Story -->
+    <section id="love-story">
+  <div class="label" data-aos="fade-up">Our Journey</div>
+  <h2 class="story-heading" data-aos="fade-up">Cerita Cinta Kami</h2>
+  
+  <div class="divider">
+    <span><i class="story-icon">❤</i></span>
+  </div>
+
+  <div class="timeline">
+    <div class="story-container left fade-up">
+      <div class="story-content">
+        <div class="story-date"></div>
+        <h3 class="story-title">Satu Ikrar Selamanya</h3>
+        <p class="story-desc">Kita pernah hanya bertemu lewat suara dan layar, mengirim rindu lewat pesan tanpa jeda.
+        Kini, Tuhan membalas sabar kita, menyatukan dua langkah dalam satu ikrar selamanya.</p>
+      </div>
+    </div>
+
+    <div class="story-container right fade-up">
+      <div class="story-content">
+        <div class="story-date"></div>
+        <h3 class="story-title">Doa yang Menyatukan</h3>
+        <p class="story-desc">Dalam jarak yang tak pernah mampu memisahkan, kita belajar mencintai dengan cara yang paling sabar.
+        Dari layar ke layar, dari rindu ke rindu,
+        Hingga Tuhan membukakan jalan-NYA
+        untuk menyatukan dua hati yang setia menunggu.
+        Hari ini, jarak bukan lagi batas.
+        Langkah kita akhirnya sampai pada yang dituju,
+        Yaitu sebuah ikatan suci bernama pernikahan.</p>
+      </div>
+    </div>
+
+    <div class="story-container left fade-up">
+      <div class="story-content">
+        <div class="story-date"></div>
+        <h3 class="story-title">Akhir dari Sebuah Rindu</h3>
+        <p class="story-desc">Jarak tak pernah membuat kita hilang. Sebaliknya, ia menguatkan.
+        Hari ini, rindu tidak lagi menunggu, karena kita akhirnya sampai pada satu tujuan yang sama.</p>
+      </div>
+    </div>
+
+     <div class="story-container right fade-up">
+      <div class="story-content">
+        <div class="story-date"></div>
+        <h3 class="story-title">Pulang pada Satu Tujuan</h3>
+        <p class="story-desc">Jarak pernah menjadi ujian, rindu pernah jadi bahasa sehari-hari.
+          Hari ini, waktu mengabulkan do'a kita, dua hati yang lama berjauhan, akhirnya pulang pada satu tujuan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- ── LOCATION ──────────────────────────────────── -->
+    <section id="location">
+      <p class="label" style="color:var(--gold-light);opacity:0.6;z-index:1">Lokasi Acara</p>
+      <h2 class="location-heading">Temukan Kami</h2>
+      <p class="location-sub">Saung Kreatif Sumedang</p>
+
+      <div class="map-container">
+        <div class="map-placeholder">
+          <img src="foto-saung.JPEG">
+          <p>Klik tombol di bawah untuk membuka Google Maps</p>
+        </div>
+      </div>
+
+      <p class="location-address fade-up" id="location-text">
+        Jln. Nyimas gedengwaru, RT/RW.01/03,<br>
+        dsn.cigembong, ds Cikondang, kec. Ganeas, SUMEDANG
+      </p>
+
+      <div class="location-btns fade-up" style="transition-delay:0.15s">
+        <a class="maps-btn" href="https://maps.app.goo.gl/yqxzN1hQubzjE9pK8" target="_blank">
+          📍 &nbsp; Buka Google Maps
+        </a>
+        <button class="maps-btn copy-addr-btn" onclick="copyAddress()">
+          📋 &nbsp; Salin Alamat
+        </button>
+      </div>
+
+    </section>
+
+
+    <!-- ── RSVP ──────────────────────────────────────── -->
+    <section id="rsvp">
+      <p class="label" style="z-index:1">Konfirmasi Kehadiran</p>
+      <h2 class="rsvp-heading">RSVP</h2>
+      <p class="rsvp-sub">Kehadiran Anda adalah kebahagiaan kami</p>
+
+      <div class="rsvp-form fade-up">
+
+        <!-- Nama -->
+        <div class="form-group">
+          <label for="rsvp-name">Nama Lengkap</label>
+          <input type="text" id="rsvp-name" placeholder="Masukkan nama Anda" />
+        </div>
+
+        <!-- Kehadiran -->
+        <div class="form-group">
+          <label>Kehadiran</label>
+          <div class="rsvp-attend">
+            <button class="attend-btn active" id="btn-hadir" onclick="setAttend('hadir')">✓ &nbsp; Hadir</button>
+            <button class="attend-btn" id="btn-tidak" onclick="setAttend('tidak')">✗ &nbsp; Tidak Hadir</button>
+          </div>
+        </div>
+
+        <!-- Jumlah tamu -->
+        <div class="form-group">
+          <label for="rsvp-guests">Jumlah Tamu</label>
+          <select id="rsvp-guests">
+            <option>1 Orang</option>
+            <option>2 Orang</option>
+            <option>3 Orang</option>
+            <option>4 Orang</option>
+            <option>5+ Orang</option>
+          </select>
+        </div>
+
+        <!-- Ucapan -->
+        <div class="form-group">
+          <label for="rsvp-msg">Ucapan &amp; Doa</label>
+          <textarea id="rsvp-msg" placeholder="Sampaikan ucapan selamat &amp; doa terbaik Anda..." maxlength="200"
+            oninput="updateCharCount()"></textarea>
+          <p class="char-count" id="char-count">0 / 200</p>
+        </div>
+
+        <button class="submit-btn" id="rsvp-submit" onclick="submitRSVP()">Kirim Konfirmasi</button>
+
+      </div>
+
+      <!-- Daftar ucapan -->
+      <div class="wishes-list" id="wishes-list"></div>
+
+    </section>
+
+
+    <!-- ── WEDDING GIFT ─────────────────────────────── -->
+    <section id="gift">
+      <p class="label" style="z-index:1;color:var(--gold-light);opacity:0.6">Hadiah Pernikahan</p>
+      <h2 class="gift-heading">Wedding Gift</h2>
+      <p class="gift-sub">Doa restu Anda adalah hadiah terbaik bagi kami.<br>Bagi yang ingin memberikan hadiah, berikut
+        informasinya.</p>
+
+      <div class="gift-cards fade-up">
+
+        <!-- ── REKENING BANK ── -->
+        <div class="gift-group-title">&nbsp;Transfer Bank</div>
+
+        <!-- BCA -->
+        <div class="gift-card">
+          <div class="gift-bank-logo">BCA</div>
+          <div class="gift-info">
+            <p class="gift-bank-name">Bank Central Asia</p>
+            <p class="gift-account-num" id="acc-bca">7030325324</p>
+            <p class="gift-account-holder"> Revi Hermawan</p>
+          </div>
+          <button class="gift-copy-btn" onclick="copyAccount('acc-bca', this)">Salin</button>
+        </div>
+
+        <!-- ── E-WALLET ── -->
+        <div class="gift-group-title" style="margin-top:2.5rem">&nbsp;E-Wallet</div>
+
+        <!-- Dana -->
+        <div class="gift-card">
+          <div class="gift-bank-logo" style="background:linear-gradient(135deg,#118eff,#0063d0)">DANA</div>
+          <div class="gift-info">
+            <p class="gift-bank-name">DANA</p>
+            <p class="gift-account-num" id="acc-dana">0856-0365-7195</p>
+            <p class="gift-account-holder">Siti Nurhayanti</p>
+          </div>
+          <button class="gift-copy-btn" onclick="copyAccount('acc-dana', this)">Salin</button>
+        </div>
+
+      </div><!-- /.gift-cards -->
+
+      <!-- Form Konfirmasi WA -->
+      <div class="gift-confirm-box">
+        <div class="gift-confirm-title"> Konfirmasi Pengiriman</div>
+        <p class="gift-confirm-desc">Setelah transfer, mohon konfirmasi melalui WhatsApp agar kami dapat segera
+          memeriksa.</p>
+
+        <div class="gift-confirm-form fade-up" style="transition-delay:0.2s">
+          <div class="gift-field">
+            <label for="cf-name">Nama Pengirim</label>
+            <input type="text" id="cf-name" placeholder="Nama lengkap Anda" />
+          </div>
+          <div class="gift-field">
+            <label for="cf-method">Transfer Via</label>
+            <select id="cf-method">
+              <option value="BCA">BCA — 7030325324</option>
+              <option value="DANA">DANA — 0856-0365-7195</option>
+            </select>
+          </div>
+          <button class="gift-wa-btn" onclick="confirmViaWhatsApp()">
+            <!-- icon WA svg -->
+            Kirim Konfirmasi via WhatsApp
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ── CLOSING ───────────────────────────────────── -->
+    <section id="closing">
+      <p class="closing-quote fade-up">
+        "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu
+        pasangan hidup dari jenismu sendiri, supaya kamu cenderung dan merasa
+        tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang."
+      </p>
+      <p class="closing-source">QS. Ar-Rum: 21</p>
+      <div class="divider" style="max-width:280px;margin:2rem auto"><span style="color:var(--gold)">✦</span></div>
+      <p class="closing-names fade-up" style="transition-delay:0.15s">Revi.h &amp; Siti.nh</p>
+      <p
+        style="font-family:'Cormorant Garamond',serif;font-style:italic;color:rgba(232,212,158,0.45);font-size:1rem;margin-top:0.8rem;z-index:1">
+        29 Juni 2026
+      </p>
+      <p class="closing-footer fade-up" style="transition-delay:0.25s">Atas kehadiran dan do'a restu dari
+        Bapak/Ibu/Saudara/i sekalian, kami mengucapkan Terima
+        Kasih❤</p>
+      <p>Wassalamualaikum Wr. Wb.</p>
+
+      <div class="closing-share fade-up" style="transition-delay:0.35s">
+        <p class="closing-share-label">Bagikan Undangan</p>
+        <div class="closing-share-btns">
+          <button class="share-btn" onclick="shareWA()">
+            WhatsApp
+          </button>
+          <button class="share-btn" onclick="copyLink()">
+            🔗 &nbsp;Salin Link
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+  </div><!-- /#main-content -->
+
+
+  <!-- =====================================================
+       AUDIO LATAR (opsional)
+       Ganti src="music.mp3" dengan path file musik Anda
+       ===================================================== -->
+  <audio id="bg-music" loop>
+    <!-- <source src="music.mp3" type="audio/mpeg"> -->
+  </audio>
+
+
+  <!-- JavaScript — letakkan sebelum </body> -->
+  <script src="script.js"></script>
+
+</body>
+
+</html>
